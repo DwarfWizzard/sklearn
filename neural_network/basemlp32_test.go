@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/datasets"
 )
 
 func ExampleBaseMultilayerPerceptron32_Fit_mnist() {

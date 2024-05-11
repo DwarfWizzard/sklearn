@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/datasets"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
@@ -43,10 +43,8 @@ func ExampleKMeans() {
 			}
 			return
 		}
-		p, err := plot.New()
-		if err != nil {
-			panic(err)
-		}
+		p := plot.New()
+
 		p.Title.Text = "kmeans"
 		p.X.Label.Text = "X"
 		p.Y.Label.Text = "Y"
@@ -88,7 +86,7 @@ func ExampleKMeans() {
 			panic(err)
 		}
 		cmd := exec.Command("display", pngfile)
-		err = cmd.Start()
+		err := cmd.Start()
 		if err != nil {
 			fmt.Println(err.Error())
 		}

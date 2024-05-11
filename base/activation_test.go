@@ -3,10 +3,10 @@ package base
 import (
 	"testing"
 
+	"github.com/DwarfWizzard/sklearn/helper"
 	"golang.org/x/exp/rand"
 
 	"gonum.org/v1/gonum/diff/fd"
-	"gonum.org/v1/gonum/floats"
 )
 
 func TestIdentity(t *testing.T) {
@@ -33,7 +33,7 @@ func testActivationDerivatives(t *testing.T, activation Activation) {
 
 		actual := activation.Fprime(y)
 
-		if !floats.EqualWithinAbs(expected, actual, 1e-3) {
+		if !helper.AlmostEqual(expected, actual, 1e-3) {
 			t.Errorf("testActivationDerivatives %T x:%g theta:%g y:%g expected:%g actual:%g", activation, x, theta, y, expected, actual)
 		}
 	}

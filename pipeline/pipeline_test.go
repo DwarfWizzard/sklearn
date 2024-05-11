@@ -3,11 +3,11 @@ package pipeline
 import (
 	"fmt"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/base"
 
-	"github.com/pa-m/sklearn/datasets"
-	nn "github.com/pa-m/sklearn/neural_network"
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/DwarfWizzard/sklearn/datasets"
+	nn "github.com/DwarfWizzard/sklearn/neural_network"
+	"github.com/DwarfWizzard/sklearn/preprocessing"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
 )

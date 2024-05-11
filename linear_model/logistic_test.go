@@ -10,8 +10,8 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/datasets"
 	"gonum.org/v1/gonum/diff/fd"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
@@ -99,7 +99,7 @@ func ExampleLogisticRegression() {
 		Xgrid := npc(xx, yy)
 		Z := regr.Predict(Xgrid, nil)
 
-		plt, _ := plot.New()
+		plt := plot.New()
 		xys := func(X, Y mat.Matrix, cls int) (xy plotter.XYs) {
 			imax, _ := Y.Dims()
 			for i := 0; i < imax; i++ {

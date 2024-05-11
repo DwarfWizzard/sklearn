@@ -7,9 +7,9 @@ import (
 
 	"golang.org/x/exp/rand"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/base"
 
-	"github.com/pa-m/optimize"
+	"github.com/DwarfWizzard/optimize"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"

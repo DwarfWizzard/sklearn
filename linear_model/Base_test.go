@@ -11,9 +11,9 @@ import (
 
 	"golang.org/x/exp/rand"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/datasets"
+	"github.com/DwarfWizzard/sklearn/metrics"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
 	"gonum.org/v1/plot"
@@ -86,7 +86,7 @@ func ExampleLinearRegression() {
 	if canPlot {
 
 		// plot result
-		p, _ := plot.New()
+		p := plot.New()
 
 		xys := func(X, Y mat.Matrix) plotter.XYs {
 			var data plotter.XYs

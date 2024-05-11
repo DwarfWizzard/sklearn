@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"gonum.org/v1/gonum/mat"
 	//"gorgonia.org/tensor"
-	"github.com/pa-m/sklearn/gaussian_process/tensor"
+	"github.com/DwarfWizzard/sklearn/gaussian_process/tensor"
 	"math"
 )
 
@@ -76,7 +76,7 @@ func applySym(dstsym, asym *mat.SymDense, f func(i, j int, v float64) float64) {
 }
 
 // Diff3D returns an error if input tensors max abs difference exceeds tol
-func Diff3D(a, b tensor.Tensor, tol float64) error {
+func Diff3D(a, b *tensor.Dense, tol float64) error {
 	var delta struct {
 		i0, i1, i2 int
 		a, b, max  float64

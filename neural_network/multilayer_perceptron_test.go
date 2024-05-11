@@ -11,15 +11,16 @@ import (
 	"testing"
 	"time"
 
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/datasets"
+	"github.com/DwarfWizzard/sklearn/helper"
+	"github.com/DwarfWizzard/sklearn/metrics"
+	modelselection "github.com/DwarfWizzard/sklearn/model_selection"
+	"github.com/DwarfWizzard/sklearn/pipeline"
 	"github.com/chewxy/math32"
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	"github.com/pa-m/sklearn/metrics"
-	modelselection "github.com/pa-m/sklearn/model_selection"
-	"github.com/pa-m/sklearn/pipeline"
 	"golang.org/x/exp/rand"
 
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/DwarfWizzard/sklearn/preprocessing"
 	"gonum.org/v1/gonum/blas/blas32"
 	"gonum.org/v1/gonum/diff/fd"
 	"gonum.org/v1/gonum/floats"
@@ -79,7 +80,7 @@ func TestMLPClassifierMicrochip(t *testing.T) {
 
 		//fmt.Printf("%s grad=%v expected %v\n", context, actualGradient, expectedGradient)
 		for j := 0; j < len(expectedGradient); j++ {
-			if !floats.EqualWithinAbs(expectedGradient[j], actualGradient[j], 1e-4) {
+			if !helper.AlmostEqual(expectedGradient[j], actualGradient[j], 1e-4) {
 				t.Errorf("%s grad=%v expected %v", context, actualGradient, expectedGradient)
 				return
 			}
@@ -503,7 +504,7 @@ func ExampleMLPClassifier_Fit_iris() {
 		Z := &mat.Dense{}
 		mlp.Predict(Xgrid, Z)
 
-		plt, _ := plot.New()
+		plt := plot.New()
 		xys := func(X, Y mat.Matrix, cls int) (xy plotter.XYs) {
 			imax, _ := Y.Dims()
 			for i := 0; i < imax; i++ {

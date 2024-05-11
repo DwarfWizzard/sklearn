@@ -9,11 +9,11 @@ import (
 
 	"gonum.org/v1/gonum/floats"
 
-	"github.com/pa-m/sklearn/metrics"
+	"github.com/DwarfWizzard/sklearn/metrics"
 
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/DwarfWizzard/sklearn/preprocessing"
 
-	"github.com/pa-m/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/base"
 	"gonum.org/v1/gonum/mat"
 
 	"gonum.org/v1/gonum/blas/blas64"

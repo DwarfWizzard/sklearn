@@ -11,8 +11,8 @@ import (
 
 	"golang.org/x/exp/rand"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/preprocessing"
+	"github.com/DwarfWizzard/sklearn/base"
+	"github.com/DwarfWizzard/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
@@ -85,7 +85,7 @@ func ExampleSVR() {
 		pngfile := fmt.Sprintf("/tmp/ExampleSVR.png")
 		os.Remove(pngfile)
 
-		p, _ := plot.New()
+		p := plot.New()
 		p.Title.Text = "Support vector regression"
 		p.X.Label.Text = "data"
 		p.Y.Label.Text = "target"
